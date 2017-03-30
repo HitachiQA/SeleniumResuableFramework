@@ -1,0 +1,3 @@
+ChromeDriver=D:\\selenium\\Drivers\\chromedriver.exe
+IEDriver=D:\\selenium\\Drivers\\IEDriverServer.exe
+FireFoxGeckoDriver=D:\\selenium\\Drivers\\geckodriver.exe

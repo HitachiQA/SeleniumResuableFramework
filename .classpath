@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="D:/selenium/selenium-server-standalone-3.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/ExternalJars/jxl.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/TestNG/artifacts.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/TestNG/content.jar"/>
+	<classpathentry kind="lib" path="D:/selenium/org.eclipse.egit_4.6.1.201703071140-r.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
