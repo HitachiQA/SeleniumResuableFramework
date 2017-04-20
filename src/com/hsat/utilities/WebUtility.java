@@ -39,6 +39,7 @@ public class WebUtility {
 		if(logFile){
 			try {
 				out.write(message);
+				out.newLine();
 				out.flush();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -51,6 +52,7 @@ public class WebUtility {
 		try{
 				driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from enterTextUsingXPath "+ field);
 			return e;
 		}
 		driver.findElement(By.xpath(xpath)).sendKeys(textVal);
@@ -62,6 +64,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.id(id));
 		}catch(NoSuchElementException e){
+			log("Error returned from enterTextUsingID "+ field);
 			return e;
 		}
 		driver.findElement(By.id(id)).sendKeys(textVal);
@@ -73,6 +76,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.name(name));
 		}catch(NoSuchElementException e){
+			log("Error returned from enterTextUsingName "+ field);
 			return e;
 		}
 		driver.findElement(By.name(name)).sendKeys(textVal);
@@ -84,6 +88,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.className(className));
 		}catch(NoSuchElementException e){
+			log("Error returned from enterTextUsingClassName "+ field);
 			return e;
 		}
 		driver.findElement(By.className(className)).sendKeys(textVal);
@@ -96,6 +101,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectValueFromDropdownUsingXpath "+ field);
 			return e;
 		}
 		Select dropdown = new Select(driver.findElement(By.xpath(xpath)));
@@ -108,6 +114,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectValueFromDropdownUsingXpath "+ field);
 			return e;
 		}
 		Select dropdown = new Select(driver.findElement(By.xpath(xpath)));
@@ -120,6 +127,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectByVisibleTextfromDropDownUsingXpath "+ field);
 			return e;
 		}
 		Select dropdown = new Select(driver.findElement(By.xpath(xpath)));
@@ -133,6 +141,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectCheckboxUsingXpath "+ field);
 			return e;
 		}
 		if (selectCheckBox && !driver.findElement(By.xpath(xpath)).isSelected()){
@@ -146,6 +155,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.id(id));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectCheckboxUsingID "+ field);
 			return e;
 		}
 		if (selectCheckBox && !driver.findElement(By.id(id)).isSelected()){
@@ -159,6 +169,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.className(className));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectCheckboxUsingClassName "+ field);
 			return e;
 		}
 		if (selectCheckBox && !driver.findElement(By.className(className)).isSelected()){
@@ -172,6 +183,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.name(name));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectCheckboxUsingName "+ field);
 			return e;
 		}
 		if (selectCheckBox && !driver.findElement(By.name(name)).isSelected()){
@@ -186,6 +198,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from clickButtonUsingXpath "+ field);
 			return e;
 		}
 		driver.findElement(By.xpath(xpath)).click();
@@ -197,6 +210,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.id(id));
 		}catch(NoSuchElementException e){
+			log("Error returned from clickButtonUsingID "+ field);
 			return e;
 		}
 		driver.findElement(By.id(id)).click();
@@ -208,6 +222,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.className(className));
 		}catch(NoSuchElementException e){
+			log("Error returned from clickButtonUsingClassName "+ field);
 			return e;
 		}
 		driver.findElement(By.className(className)).click();
@@ -219,6 +234,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.name(name));
 		}catch(NoSuchElementException e){
+			log("Error returned from clickButtonUsingName "+ field);
 			return e;
 		}
 		driver.findElement(By.name(name)).click();
@@ -231,6 +247,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from clickLinkUsingXpath "+ field);
 			return e;
 		}
 		driver.findElement(By.xpath(xpath)).click();
@@ -242,6 +259,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.linkText(linkText));
 		}catch(NoSuchElementException e){
+			log("Error returned from clickLinkUsingLinkText "+ field);
 			return e;
 		}
 		driver.findElement(By.linkText(linkText)).click();
@@ -253,6 +271,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.partialLinkText(partialText));
 		}catch(NoSuchElementException e){
+			log("Error returned from clickLinkUsingPartialText "+ field);
 			return e;
 		}
 		driver.findElement(By.partialLinkText(partialText)).click();
@@ -266,6 +285,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectListItemUsingValue "+ field);
 			return e;
 		}
 		Select listbox = new Select(driver.findElement(By.xpath(xpath)));
@@ -278,6 +298,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectListItemUsingIndex "+ field);
 			return e;
 		}
 		Select listbox = new Select(driver.findElement(By.xpath(xpath)));
@@ -290,6 +311,7 @@ public class WebUtility {
 		try{
 			driver.findElement(By.xpath(xpath));
 		}catch(NoSuchElementException e){
+			log("Error returned from selectListItemUsingText "+ field);
 			return e;
 		}
 		Select listbox = new Select(driver.findElement(By.xpath(xpath)));
@@ -306,11 +328,13 @@ public class WebUtility {
 		String nodes[] = treePath.split(",");
 		for(String node : nodes){
 			try{
-				driver.findElement(By.xpath("//*[contains(text(),"+node+")]/preceding-sibling::"+treeSymbolAbsPath));
+				System.out.println("//*[contains(text(),'"+node+"')]/preceding-sibling::"+treeSymbolAbsPath);
+				driver.findElement(By.xpath("//*[contains(text(),'"+node+"')]/preceding-sibling::"+treeSymbolAbsPath));
 			}catch(NoSuchElementException e){
+				log("Error returned from nabigateToNode "+ node);
 				return e;
 			}
-			driver.findElement(By.xpath("//*[contains(text(),"+node+")]/preceding-sibling::"+treeSymbolAbsPath)).click();
+			driver.findElement(By.xpath("//*[contains(text(),'"+node+"')]/preceding-sibling::"+treeSymbolAbsPath)).click();
 			log("Expanding tree element : "+node);
 		}
 		return null;
@@ -321,4 +345,3 @@ public class WebUtility {
 	//click table
 	//click calander
 }
-
