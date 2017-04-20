@@ -14,7 +14,7 @@ public class LoadDriver {
 	public static WebDriver driver;
 	
 	public LoadDriver(){
-		File src = new File("./ConfigurationFiles/drivers.property");
+		File src = new File("./Configuration/drivers.property");
 		try {
 			FileInputStream fs = new FileInputStream(src);
 			pro = new Properties();			
