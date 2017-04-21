@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class WebUtility {
@@ -341,7 +342,37 @@ public class WebUtility {
 	}
 	
 	//click image
-	//click webelement
 	//click table
 	//click calander
+	
+	//WebElement methods
+    
+    public Exception webElementFunctions(WebDriver driver, String action, String xpath, String expectedText,  String ElementName)
+    {
+       WebElement elem;
+       try{                 
+              elem =driver.findElement(By.xpath(xpath));
+                               
+       }catch(NoSuchElementException e){
+           log("Error returned from finding webelement" +ElementName);
+           return e;
+       }
+    
+       if (action == "ClickElement"){
+			 elem.click();     
+			 log("Element " +  ElementName  +" is clicked");               
+       }else if (action == "IsDisplayed"){
+			 if (elem.isDisplayed()){
+				 log("Element "+ ElementName +" is displayed on the page");
+			 }
+       }else if (action == "VerifyTextDisplayed"){
+			 String actualText = elem.getText();
+			 if (actualText == expectedText){  
+				 log("Text displayed " +actualText + " is matching with " + expectedText);}
+			 else{
+				 log("Text displayed " +actualText + " is not matching with " + expectedText);       
+			 };
+		}
+		return null;
+    }
 }
